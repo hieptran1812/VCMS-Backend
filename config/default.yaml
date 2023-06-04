@@ -1,0 +1,13 @@
+# dataset
+root_data_path: dataset/train
+inference_data: dataset/public_test_2/frames/
+image_size: 256
+batch_size: 16
+num_workers: 4
+pretrained: True
+num_classes: 5
+
+# trainer
+device: 'cuda:0'
+debug: False
+port: 8003

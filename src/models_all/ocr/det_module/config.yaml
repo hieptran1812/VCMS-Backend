@@ -1,0 +1,74 @@
+meta:
+  root_dir: deep-sight-image
+  debug: False
+  device: cuda
+  test_device: cpu
+
+hps:
+  batch_size: 4
+  test_batch_size: 1  # must be set to 1 to evaluate metric
+  img_size: 640
+  no_epochs: 100
+  warmup_epochs: 10
+  no_classes: 2
+  log_iter: 50
+
+lrs:
+  mode: reduce  # reduce / poly
+  warmup_iters: 10
+  factor: 0.2
+  patience: 4
+
+augmentation:
+
+callbacks:
+
+data:
+  SceneText:
+    train_dir: dataset/train/img/
+    test_dir: dataset/test/img/
+    train_gt_dir: dataset/train/gt/
+    test_gt_dir: dataset/test/gt
+    ignore_tags: []
+
+dataset:
+  name: SceneText
+  return_dict: True
+
+logging:
+  logger_file: train.log
+
+loss:
+
+model:
+  finetune_cp_path:
+  best_cp_path: checkpoint/best_cp.pth
+  last_cp_path: checkpoint/last_cp.pth
+  best_hmean_cp_path: checkpoint/best_hmean.pth
+
+optimizer:
+  type: SGD
+  lr: 0.007
+  lr_finetune: 0.001
+  weight_decay: 0.0001
+  momentum: 0.9
+  reduction: mean
+  alpha: 1
+  beta: 10
+  negative_ratio: 3
+  amsgrad: False
+  power: 0.9
+
+metric:
+  thred_text_score: 0.25
+  prob_threshold: 0.50
+  unclip_ratio: 1.50
+  is_output_polygon: True
+
+private:
+
+scheduler:
+
+trainer:
+
+training:

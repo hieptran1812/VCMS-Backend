@@ -1,0 +1,7 @@
+data:
+    unlabeled_folder: /data/hieptq/labels
+    unlabeled_csv_file: /data/hieptq/test_img_clf/unlabeled_data.csv
+    train_csv_file: /data/hieptq/test_img_clf/train_7_brand_extend.csv
+    val_csv_file: /data/hieptq/test_img_clf/test_7_brand_extend.csv
+
+device: cuda:1

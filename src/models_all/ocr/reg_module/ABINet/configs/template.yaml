@@ -1,0 +1,70 @@
+global:
+  name: exp
+  phase: train
+  stage: pretrain-vision
+  workdir: /tmp/workdir
+  seed: ~
+ 
+dataset:
+  train: {
+    roots: ['data/wordbase/biasach/', 
+            'data/wordbase/block_train', 
+            'data/wordbase/saoke',
+            'data/wordbase/syn_200k',
+            'data/wordbase/tdsd_ver4',
+            'data/wordbase/tdsd_ver5',
+            'data/wordbase/textocr_200k',
+            'data/wordbase/tphcm_train',
+            'data/wordbase/vintext'],
+    batch_size: 128
+  }
+  test: {
+    roots: ['data/wordbase/block_val',
+            'data/wordbase/s90k_val',
+            'data/wordbase/tphcm_val',
+            'data/wordbase/tdsd_ver3'],
+    batch_size: 128
+  }
+  charset_path: ABINet/data/charset_vn.txt
+  num_workers: 4
+  max_length: 40  # 30
+  image_height: 32
+  image_width: 128
+  case_sensitive: True
+  eval_case_sensitive: True
+  data_aug: True
+  multiscales: False
+  pin_memory: True
+  smooth_label: False
+  smooth_factor: 0.1
+  one_hot_y: True
+  use_sm: False
+
+training:
+  epochs: 6
+  show_iters: 50
+  eval_iters: 3000
+  save_iters: 20000
+  start_iters: 0
+  stats_iters: 100000
+
+optimizer:
+  type: Adadelta # Adadelta, Adam
+  true_wd: False
+  wd: 0. # 0.001
+  bn_wd: False
+  args: {
+    # betas: !!python/tuple [0.9, 0.99], # betas=(0.9,0.99) for AdamW
+    # betas: !!python/tuple [0.9, 0.999], # for default Adam 
+  }
+  clip_grad: 20
+  lr: [1.0, 1.0, 1.0]  # lr: [0.005, 0.005, 0.005]   
+  scheduler: {
+    periods: [3, 2, 1],
+    gamma: 0.1,
+  }
+
+model:
+  name: 'modules.model_abinet.ABINetModel'
+  checkpoint: ~
+  strict: True

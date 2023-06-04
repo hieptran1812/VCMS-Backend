@@ -1,0 +1,9 @@
+{
+    "description": "catch invalid keywords appeared on video",
+    "categories": {
+        "chientranh": "chiến tranh, war, xung đột, đẫm máu, súng, xả súng, khủng bố, tấn công, chiến trường, tập kích, chiến sự",
+        "cobac": "bet, cờ bạc, đánh bạc, xóc đĩa, nhà cái, tài xỉu, poker", 
+        "tainan": "tai nạn, va chạm", 
+        "thientai": "lũ lụt, hạn hán, động đất, thiên tai, sóng thần"
+    }
+}
