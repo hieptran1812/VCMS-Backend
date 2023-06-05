@@ -12,7 +12,7 @@ https://vcms-d5e48.web.app/
 
 Sơ đồ tổng quan của hệ thống kiểm duyệt video như sau
 
-![image.png](https://images.viblo.asia/ca93fce4-066e-4701-8edd-fe445b689a16.png)
+![image.png](https://images.viblo.asia/98444700-6d4a-41f4-b295-692acb479031.png)
 
 Mô tả:
 
@@ -22,9 +22,9 @@ Mô tả:
 
 ### Backend
 
-Github repo:
+Github repo: https://github.com/hieptran1812/VCMS-Backend
 
-Docker:
+Docker image: https://hub.docker.com/repository/docker/hieptran1812/vcms/general
 
 #### Các model AI sử dụng
 
@@ -32,7 +32,6 @@ Docker:
 
 Vì text xuất hiện trong video chủ yếu là scene text nên hệ thống sử dụng model DBNet và YoloV5 để cho tác vụ Text Detection. Với tác vụ Text Recognition, hệ thống sử dụng ABINet. Kết quả được đánh giá theo **WER ~ 2.4** trên các tập dữ liệu BKAI, VinText.
 
-Tìm hiểu thêm về DBNet tại [link](/paper-reading/DBNet) và ABINet tại [link](/paper-reading/ABINet)
 
 ##### Image classification
 
@@ -52,8 +51,15 @@ Github repo: https://github.com/hieptran1812/VCMS
 
 #### Tech stack sử dụng
 
-Tech stack Frontend được sử dụng trong sản phẩm là ReactJS. Ngôn ngữ lập trình sử dụng là JavaScript. Ngoài ra các công cụ hỗ trợ để viết documentation là [Docusaurus](https://docusaurus.io/pt-BR/), [Stoplight]https://stoplight.io/). Đây là những công cụ mạnh trong việc xây dựng APIs Documentation, hỗ trợ xây dựng giao diện khoa học, bắt mắt đồng thời tối ưu được thời gian trong việc xây dựng Frontend. Frontend được hosting và auto deploy sử dụng Firebase.
+Tech stack Frontend được sử dụng trong sản phẩm là ReactJS. Ngôn ngữ lập trình sử dụng là JavaScript. Ngoài ra các công cụ hỗ trợ để viết documentation là [Docusaurus](https://docusaurus.io/pt-BR/), [Stoplight](https://stoplight.io/). Đây là những công cụ mạnh trong việc xây dựng APIs Documentation, hỗ trợ xây dựng giao diện khoa học, bắt mắt đồng thời tối ưu được thời gian trong việc xây dựng Frontend. Frontend được hosting và auto deploy sử dụng Firebase.
 
 #### Template tham khảo
 
 Phần Frontend của sản phẩm được sử dụng template Frontend của trang https://dyte.io/. Đây là sản phẩm hỗ trợ xây dựng ứng dụng video stream, được đánh giá cao trên trang Product Hunt. Do giao diện được thiết kế bắt mắt, bố cục hợp lý và khoa học nên mình quyết định sử dụng template này cho sản phẩm VCMS.
+
+
+## Một số nguồn cần đọc 
+
+1. Hướng dẫn cài đặt và chạy demo https://vcms-d5e48.web.app/guides/introduction
+2. Đọc paper https://vcms-d5e48.web.app/paper-reading
+3. Tech Blog https://vcms-d5e48.web.app/tech-blog

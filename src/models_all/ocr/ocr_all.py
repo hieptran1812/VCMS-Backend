@@ -27,7 +27,7 @@ class Ocr():
                          recog_config='./models_all/ocr/mmocr_config/textrecog/abinet/abinet_academic.py', 
                          recog_ckpt='../checkpoints/abinet_hw.pth',
                          )
-        self.block_model = torch.hub.load('ultralytics/yolov5', 'custom', path='../checkpoints/detect_block.pt')
+        self.block_model = torch.hub.load('ultralytics/yolov5', 'custom', path='../checkpoints/detect_block.pt').to('cuda:0')
         self.inference_all = Inference(self.detect_textword, self.detect_textline, self.recognition_line, self.block_model) 
         self.upload_folder = upload_folder
          

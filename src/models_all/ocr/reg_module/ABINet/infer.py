@@ -97,7 +97,7 @@ class ABIInference:
         config.global_phase = 'test'
         config.model_vision_checkpoint, config.model_language_checkpoint = None, None
         self.config = config
-        self.device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+        self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         model = get_model(config).to(self.device)
         model = load(model, config.model_checkpoint, device=self.device)
         charset = CharsetMapper(filename=config.dataset_charset_path,

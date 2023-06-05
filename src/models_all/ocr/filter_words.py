@@ -24,7 +24,7 @@ class Keywords_detection(object):
         final_results = set()
         text_prediction = prediction["data"]["result"]
 
-        res['info'] = {}
+#         res['info'] = {}
 
         for time_frame in text_prediction.values():
             time_frame_category = []

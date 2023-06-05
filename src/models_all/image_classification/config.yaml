@@ -4,4 +4,4 @@ data:
     train_csv_file: /data/hieptq/test_img_clf/train_7_brand_extend.csv
     val_csv_file: /data/hieptq/test_img_clf/test_7_brand_extend.csv
 
-device: cuda:1
+device: cuda:0

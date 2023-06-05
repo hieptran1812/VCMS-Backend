@@ -29,13 +29,9 @@ ocr = Ocr()
 img_clf = Image_classification()
 filter_words = Keywords_detection(ocr, keywords_config_path)
 
-
-device = cfg.device
-
     
 api_config_path = '../config/api.json'
 keywords_config_path = '../config/keywords_category.json'
-
 
 
 @app.route('/video_content_moderation', methods=['GET'])

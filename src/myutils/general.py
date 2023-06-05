@@ -10,7 +10,6 @@ from io import BytesIO
 from types import SimpleNamespace
 from datetime import datetime, timedelta
 import yt_dlp
-import telegram
 
 
 def load_config(path: str):
@@ -70,25 +69,3 @@ def check_allowed_url(url):
     else:
         data_type=20
     return data_type 
-
-
-# # download image
-# def download_image(image_url):
-#     response = requests.get(image_url)
-#     image = Image.open(BytesIO(response.content)).convert("RGB")
-#     return image
-
-
-def make_message(js):
-    result = ''
-    for k, v in js.items():
-        result += '- {}: {} \n'.format(str(k), str(v))
-    return result
-    
-
-# def call_api(url, link_api='http://172.18.5.44:8000/mlbigdata/vision/brandsafety/predict'):
-#     response = requests.get(link_api + "?url=%s"%url)
-#     result = response.json()
-#     labels = result['label']
-#     latency = result['infos']
-#     return labels, latency
